@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionStore | Стиль. Качество. Дерзость.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="noise"></div>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__inner">
+                <a href="#" class="logo">FΛSHION</a>
+                <div class="nav__links">
+                    <a href="#home" class="nav__link">НОВИНКИ</a>
+                    <a href="#catalog" class="nav__link">КАТАЛОГ</a>
+                    <a href="#about" class="nav__link">БРЕНД</a>
+                    <a href="#contact" class="nav__link">КОНТАКТЫ</a>
+                </div>
+                <div class="nav__icons">
+                    <button class="search-btn">🔍</button>
+                    <button class="cart-btn">🛒 <span class="cart-count" id="cartCount">0</span></button>
+                    <button class="theme-toggle" id="themeToggle">🌙</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero__slider">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1920&h=1080&fit=crop')"></div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&h=1080&fit=crop')"></div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&h=1080&fit=crop')"></div>
+            </div>
+            <div class="hero__overlay"></div>
+            <div class="container hero__content">
+                <div class="hero__badge">SS 2026 COLLECTION</div>
+                <h1 class="hero__title">ВЫБЕРИ <span class="accent">СВОЙ СТИЛЬ</span></h1>
+                <p class="hero__desc">Одежда для тех, кто не боится выделяться. Минимализм, качество, характер.</p>
+                <div class="hero__cta">
+                    <a href="#catalog" class="btn btn-primary">СМОТРЕТЬ КОЛЛЕКЦИЮ</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog -->
+        <section class="catalog" id="catalog">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">НОВАЯ КОЛЛЕКЦИЯ</span>
+                    <h2 class="section-title">ХИТЫ <span class="accent">СЕЗОНА</span></h2>
+                    <p class="section-desc">Стильные вещи, которые уже полюбили тысячи</p>
+                </div>
+                <div class="catalog__filters">
+                    <button class="filter-btn active" data-category="all">ВСЕ</button>
+                    <button class="filter-btn" data-category="hoodies">ХУДИ</button>
+                    <button class="filter-btn" data-category="t-shirts">ФУТБОЛКИ</button>
+                    <button class="filter-btn" data-category="pants">ШТАНЫ</button>
+                    <button class="filter-btn" data-category="accessories">АКСЕССУАРЫ</button>
+                </div>
+                <div class="catalog__grid" id="productsGrid">
+                    <!-- Товары загружаются через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__inner">
+                    <div class="about__content">
+                        <span class="section-tag">О БРЕНДЕ</span>
+                        <h2 class="section-title">FΛSHION — ЭТО <span class="accent">ATTITUDE</span></h2>
+                        <p>Мы создаём одежду для тех, кто живёт на полную. Без компромиссов. Без лишнего. Только качественные материалы и продуманный крой.</p>
+                        <div class="about__stats">
+                            <div class="stat"><span>50k+</span><br>покупателей</div>
+                            <div class="stat"><span>12</span><br>стран</div>
+                            <div class="stat"><span>100%</span><br>качество</div>
+                        </div>
+                    </div>
+                    <div class="about__image">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&h=600&fit=crop" alt="Модель">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact__inner">
+                    <div class="contact__info">
+                        <span class="section-tag">СВЯЖИТЕСЬ С НАМИ</span>
+                        <h2 class="section-title">Есть <span class="accent">вопросы</span>?</h2>
+                        <p>Мы на связи 24/7</p>
+                        <div class="contact__details">
+                            <div>✉ shop@fashionstore.ru</div>
+                            <div>📞 +7 (999) 123-45-67</div>
+                            <div>📍 Москва, ул. Тверская 10</div>
+                        </div>
+                    </div>
+                    <div class="contact__form">
+                        <form id="contactForm">
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                            <input type="email" id="email" placeholder="Email" required>
+                            <textarea id="message" rows="4" placeholder="Ваше сообщение" required></textarea>
+                            <button type="submit" class="btn btn-primary btn-block">ОТПРАВИТЬ</button>
+                        </form>
+                        <div id="formMessage"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Корзина модалка -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal__content">
+            <div class="cart-modal__header">
+                <h3>КОРЗИНА</h3>
+                <button class="cart-modal__close" id="closeCartBtn">×</button>
+            </div>
+            <div class="cart-modal__items" id="cartItems"></div>
+            <div class="cart-modal__footer">
+                <div class="cart-total">ИТОГО: <span id="cartTotal">0</span> ₽</div>
+                <button class="btn btn-primary btn-block" id="checkoutBtn">ОФОРМИТЬ</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo">FΛSHION</div>
+                <div class="footer__copy">© 2026 — ВСЕ ПРАВА ЗАЩИЩЕНЫ</div>
+                <div class="footer__social">
+                    <a href="#">INST</a>
+                    <a href="#">TG</a>
+                    <a href="#">VK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
